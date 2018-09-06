@@ -9,10 +9,9 @@ function get_day(target) {
 
 
 function set_bgi(id, day) {
-    $.getJSON("https://pem3ipr0e.bkt.clouddn.com/wallpapers.json", (ret) => {
-        psrc = ret['data'][day]
-        $('#' + id).css('background-image', 'url(\'' + psrc + '\')')
-    })
+    var srcbase = "http://pem26iqr1.bkt.clouddn.com/"
+    var psrc = srcbase + data[day]
+    $('#' + id).css('background-image', 'url(\'' + psrc + '\')')
 }
 
 function update_pos() {
@@ -23,13 +22,12 @@ function update_pos() {
 }
 
 $(() => {
-    var day = get_day("2018-12-23")
-    $('#cdday').html(day)
-    set_bgi('bgi', day)
-
-
     update_pos()
     window.onresize = () => {
         update_pos()
     }
+
+    var day = get_day("2018-12-23")
+    $('#cdday').html(day)
+    set_bgi('bgi', day)
 })
