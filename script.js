@@ -9,7 +9,7 @@ function get_day(target) {
 
 
 function set_bgi(id, day) {
-    $.getJSON("http://pem3ipr0e.bkt.clouddn.com/wallpapers.json", (ret) => {
+    $.getJSON("https://pem3ipr0e.bkt.clouddn.com/wallpapers.json", (ret) => {
         psrc = ret['data'][day]
         $('#' + id).css('background-image', 'url(\'' + psrc + '\')')
     })
