@@ -7,7 +7,7 @@ function get_day(target) {
 }
 
 function set_bgi(id, day) {
-    var srcbase = "http://pem26iqr1.bkt.clouddn.com/"
+    var srcbase = "	https://wallpapers-1253476926.cos.ap-shanghai.myqcloud.com/"
     var psrc = srcbase + data[day]
     $('#' + id).css('background-image', 'url(\'' + psrc + '\')')
 }
@@ -19,13 +19,11 @@ function update_pos() {
     $('.ct').css('margin-top', m)
 }
 
-$(() => {
-    update_pos()
-    window.onresize = () => {
-        update_pos()
-    }
+// $(() => {
+update_pos()
+window.onresize = update_pos
 
-    var day = get_day("2018-12-23")
-    $('#cdday').html(day)
-    set_bgi('bgi', day)
-})
+var day = get_day("2018-12-23")
+$('#cdday').html(day)
+set_bgi('bgi', day)
+// })
