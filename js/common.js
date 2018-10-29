@@ -1,4 +1,3 @@
-
 function get_day(target) {
     var ky = new Date(target)
     var now = new Date()
@@ -6,7 +5,6 @@ function get_day(target) {
     var day = parseInt(diffsec / 24 / 3600)
     return day
 }
-
 
 function set_bgi(id, day) {
     var srcbase = "http://pem26iqr1.bkt.clouddn.com/"
