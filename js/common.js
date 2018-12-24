@@ -8,6 +8,7 @@ function get_day(target) {
 
 function set_bgi(id, day) {
     var srcbase = "	https://wallpapers-1253476926.cos.ap-shanghai.myqcloud.com/"
+    day = day % 100 % 88;
     var psrc = srcbase + data[day]
     $('#' + id).css('background-image', 'url(\'' + psrc + '\')')
 }
@@ -23,7 +24,7 @@ function update_pos() {
 update_pos()
 window.onresize = update_pos
 
-var day = get_day("2018-12-23")
+var day = get_day("2019-12-21")
 $('#cdday').html(day)
 set_bgi('bgi', day)
 // })
