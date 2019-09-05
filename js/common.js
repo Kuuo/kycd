@@ -20,11 +20,17 @@ function update_pos() {
     $('.ct').css('margin-top', m)
 }
 
+function set_year() {
+    document.getElementById('year').innerHTML = new Date().getFullYear() + 1
+}
+
 // $(() => {
 update_pos()
 window.onresize = update_pos
 
-var day = get_day("2019-12-21")
+set_year();
+
+var day = get_day("2019-12-22")
 $('#cdday').html(day)
 set_bgi('bgi', day)
 // })
